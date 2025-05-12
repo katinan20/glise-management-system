@@ -31,18 +31,10 @@ public class GroupeTable extends BaseEntityTable {
     @NotBlank(message = "le nom est obligatoire")
     @Column(nullable = false)
     private String nom;
+    @NotBlank(message = "le nom est obligatoire")
+    @Column(nullable = false)
+    private String code;
     @NotBlank(message = "l description est obligatoire")
     @Column(nullable = false)
     private String description;
-
-    @OneToMany(mappedBy = "groupe", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<MembreGroupeTable> membres = new HashSet<>();
-
-    @ManyToMany
-    @JoinTable(
-            name = "groupe_activite",
-            joinColumns = @JoinColumn(name = "groupe_id"),
-            inverseJoinColumns = @JoinColumn(name = "activite_id")
-    )
-    private Set<ActiviteTable> activites = new HashSet<>();
 }

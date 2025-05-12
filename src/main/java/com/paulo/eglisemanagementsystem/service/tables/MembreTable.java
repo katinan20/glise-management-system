@@ -1,14 +1,17 @@
 package com.paulo.eglisemanagementsystem.service.tables;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.*;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -58,14 +61,5 @@ public class MembreTable extends BaseEntityTable {
     @Column(name = "actif")
     private Boolean actif;
 
-
-    @OneToMany(mappedBy = "membre", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<MembreGroupeTable> groupes = new HashSet<>();
-
-    @OneToMany(mappedBy = "membre", cascade = CascadeType.ALL)
-    private Set<ParticipationActiviteTable> participations = new HashSet<>();
-
-    @OneToMany(mappedBy = "membre")
-    private Set<CotisationTable> cotisations = new HashSet<>();
 
 }

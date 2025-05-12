@@ -10,4 +10,5 @@ import java.util.UUID;
  * @project eglise-management-system
  */
 public interface JpaGroupeRepository extends JpaRepository<GroupeTable, UUID> {
+    boolean existsByNom(String name);
 }

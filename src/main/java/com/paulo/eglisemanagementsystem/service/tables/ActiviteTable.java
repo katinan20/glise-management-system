@@ -37,7 +37,4 @@ public class ActiviteTable {
     private String lieu;
     private BigDecimal budget;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<GroupeTable> groupes;
-
 }

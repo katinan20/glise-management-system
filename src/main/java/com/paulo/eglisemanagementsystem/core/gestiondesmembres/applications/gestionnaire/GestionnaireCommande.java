@@ -7,5 +7,5 @@ import com.paulo.eglisemanagementsystem.core.gestiondesmembres.domain.entite.Mem
  * @project eglise-management-system
  */
 public interface GestionnaireCommande<C> {
-    Membres executer(C var);
+    Membres executer(C vars);
 }

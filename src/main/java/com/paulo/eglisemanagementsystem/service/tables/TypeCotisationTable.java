@@ -30,7 +30,4 @@ public class TypeCotisationTable {
     private BigDecimal montant_suggere;
     private String description;
 
-    @OneToMany(mappedBy = "typeCotisation" )
-    private List<CotisationTable> cotisations;
-
 }
